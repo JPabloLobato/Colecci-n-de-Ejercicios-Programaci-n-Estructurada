@@ -1,5 +1,10 @@
-//
-// Created by Pablo Lobato on 12/12/2023.
-//
+#include <iostream>
+#include <cstring> // funciones de cadenas de caracteres
+#include <cstdlib> // funciones malloc
 
-#include "EJ1.h"
+// Definición de la estructura Estudiante
+struct Estudiante {
+    char nombre[50];
+    int edad;
+    float promedio;
+};
