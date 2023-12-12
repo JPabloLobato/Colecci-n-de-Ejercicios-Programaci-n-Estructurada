@@ -1,6 +1,6 @@
 #include <iostream>
-#include <cstring> // funciones de cadenas de caracteres
-#include <cstdlib> // funciones malloc
+#include <cstring> // Para usar funciones de cadenas de caracteres
+#include <cstdlib> // Para usar la función malloc
 
 // Definición de la estructura Estudiante
 struct Estudiante {
@@ -8,6 +8,7 @@ struct Estudiante {
     int edad;
     float promedio;
 };
+
 int main() {
     // a. Constitución de una estructura
     // b. Instanciación de estructuras
@@ -41,3 +42,47 @@ int main() {
             std::cout << "La lista de estudiantes está llena." << std::endl;
         }
     };
+
+    // Función para ver la lista de estudiantes
+    auto verEstudiantes = [&cantidadEstudiantes, &listaEstudiantes]() {
+        if (cantidadEstudiantes > 0) {
+            std::cout << "Lista de Estudiantes:" << std::endl;
+            for (int i = 0; i < cantidadEstudiantes; ++i) {
+                std::cout << "Nombre: " << listaEstudiantes[i].nombre << ", Edad: " << listaEstudiantes[i].edad
+                          << ", Promedio: " << listaEstudiantes[i].promedio << std::endl;
+            }
+        } else {
+            std::cout << "La lista de estudiantes está vacía." << std::endl;
+        }
+    };
+
+    // Función para eliminar un estudiante de la lista
+    auto eliminarEstudiante = [&cantidadEstudiantes, &listaEstudiantes](const char* nombre) {
+        for (int i = 0; i < cantidadEstudiantes; ++i) {
+            if (std::strcmp(listaEstudiantes[i].nombre, nombre) == 0) {
+                // Mover el último estudiante a la posición del estudiante a eliminar
+                listaEstudiantes[i] = listaEstudiantes[cantidadEstudiantes - 1];
+
+                // Limpiar la última posición (opcional)
+                std::memset(&listaEstudiantes[cantidadEstudiantes - 1], 0, sizeof(Estudiante));
+
+                cantidadEstudiantes--;
+                std::cout << "Estudiante eliminado." << std::endl;
+                return;
+            }
+        }
+        std::cout << "Estudiante no encontrado." << std::endl;
+    };
+
+    // Uso de las funciones
+    agregarEstudiante(estudiante1);
+    agregarEstudiante(*estudiante2);
+    verEstudiantes();
+    eliminarEstudiante("Juan");
+    verEstudiantes();
+
+    // Liberar memoria asignada con malloc
+    std::free(estudiante2);
+
+    return 0;
+}
