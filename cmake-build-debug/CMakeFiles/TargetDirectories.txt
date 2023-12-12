@@ -1,0 +1,5 @@
+C:/Users/tinitotin/OneDrive/Documentos/GitHub/Colecci-n-de-Ejercicios-Programaci-n-Estructurada/cmake-build-debug/CMakeFiles/EJ1.dir
+C:/Users/tinitotin/OneDrive/Documentos/GitHub/Colecci-n-de-Ejercicios-Programaci-n-Estructurada/cmake-build-debug/CMakeFiles/EJ2.dir
+C:/Users/tinitotin/OneDrive/Documentos/GitHub/Colecci-n-de-Ejercicios-Programaci-n-Estructurada/cmake-build-debug/CMakeFiles/EJ3.dir
+C:/Users/tinitotin/OneDrive/Documentos/GitHub/Colecci-n-de-Ejercicios-Programaci-n-Estructurada/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/tinitotin/OneDrive/Documentos/GitHub/Colecci-n-de-Ejercicios-Programaci-n-Estructurada/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,10 +1,10 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 
 union DatosUnion {
     int entero;
     float flotante;
-    std::string cadena;  // Usamos std::string para manejar la cadena de manera segura
+    char cadena[50];  // Usamos un array de caracteres para representar la cadena
 };
 
 int main() {
@@ -18,8 +18,8 @@ int main() {
     datos.flotante = 3.14f;
     std::cout << "Valor flotante: " << datos.flotante << std::endl;
 
-    // Asignar una cadena de caracteres usando std::string
-    datos.cadena = "Hola, mundo!";
+    // Asignar una cadena de caracteres
+    std::strcpy(datos.cadena, "Hola, mundo!");
     std::cout << "Valor cadena: " << datos.cadena << std::endl;
 
     // Observar el comportamiento
@@ -27,4 +27,3 @@ int main() {
 
     return 0;
 }
-
